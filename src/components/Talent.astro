@@ -1,0 +1,102 @@
+---
+import { Image } from "astro:assets";
+
+interface TeamMember {
+	name: string;
+	role: string;
+}
+
+const team: TeamMember[] = [
+	{
+		name: "Alejandra Durán",
+		role: "Directora de Cuentas",
+	},
+	{
+		name: "Yare Bando",
+		role: "Directora de Planeación",
+	},
+	{
+		name: "Gastón Rubio",
+		role: "Director de Estrategia",
+	},
+	{
+		name: "Arian Hoffman",
+		role: "Director de Arte",
+	},
+	{
+		name: "Carlos Ramírez",
+		role: "Director de Producción",
+	},
+];
+---
+
+<ul>
+	{
+		team.map((teamMember, index) => (
+			<li data-index={index} class="team-member">
+				<span>{teamMember.name}</span>
+			</li>
+		))
+	}
+</ul>
+<div id="selected-image-container">
+	<Image
+		id="selected-image"
+		src="/talent/talent-alejandra-duran.png"
+		alt="Alejandra Durán"
+		width={200}
+		height={200}
+		loading="eager"
+	/>
+</div>
+
+<script define:vars={{ team }}>
+	const teamMembers = document.querySelectorAll(".team-member");
+	let selectedImage = document.getElementById("selected-image");
+
+	const teamMemberImages = [
+		"/talent/talent-alejandra-duran.png",
+		"/talent/talent-yare-bando.png",
+		"/talent/talent-gaston-rubio.png",
+		"/talent/talent-arian-hoffman.png",
+		"/talent/talent-carlos-ramirez.png",
+	];
+
+	function updateImage(member) {
+		teamMembers.forEach((el) => el.classList.remove("selected"));
+
+		member.classList.add("selected");
+
+		const index = member.getAttribute("data-index");
+		if (selectedImage && index !== null) {
+			selectedImage.src = teamMemberImages[parseInt(index)];
+			selectedImage.alt = team[index].name;
+		}
+	}
+
+	if (selectedImage) {
+		teamMembers.forEach((member) => {
+			member.addEventListener("mouseenter", () => updateImage(member));
+			member.addEventListener("click", () => updateImage(member));
+		});
+	}
+</script>
+
+<style>
+	.team-member {
+		padding: 10px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		transition: background-color 0.3s ease;
+	}
+
+	.team-member.selected {
+		background-color: #f0f8ff;
+	}
+
+	.grid-image {
+		margin-left: 10px;
+		border-radius: 5px;
+	}
+</style>
