@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+
+import "@/styles/partner-grid.css";
+
+import alpura from "@/images/corp-alpura.png";
+import colgate from "@/images/corp-colgate.png";
+import johnsonAndJohnson from "@/images/corp-johnson-and-johnson.svg";
+import kimberlyClark from "@/images/corp-kimberly-clark.png";
+import lala from "@/images/corp-lala.png";
+import mars from "@/images/corp-mars.svg";
+import nestle from "@/images/corp-nestle.png";
+import nivea from "@/images/corp-nivea.png";
+import scjohnson from "@/images/corp-scjohnson.png";
+import unilever from "@/images/corp-unilever.svg";
+import walmartConnect from "@/images/corp-walmart-connect.png";
+---
+
+<div class="wrapper">
+	<div class="grid grid-cols-4 gap-4 p-4">
+		<div class="flex justify-center items-center">
+			<Image src={alpura} alt="Alpura" class="grid-image" />
+		</div>
+		<div class="flex justify-center items-center">
+			<Image src={colgate} alt="Colgate" class="grid-image" />
+		</div>
+		<div class="flex justify-center items-center">
+			<Image
+				src={johnsonAndJohnson}
+				alt="Johnson & Johnson"
+				class="grid-image"
+			/>
+		</div>
+		<div class="flex justify-center items-center">
+			<Image
+				src={kimberlyClark}
+				alt="Kimberly-Clark"
+				class="grid-image"
+			/>
+		</div>
+		<div class="flex justify-center items-center">
+			<Image src={lala} alt="Lala" class="grid-image" />
+		</div>
+		<div class="flex justify-center items-center">
+			<Image src={mars} alt="Mars" class="grid-image" />
+		</div>
+		<div class="flex justify-center items-center">
+			<Image src={nestle} alt="Nestlé" class="grid-image" />
+		</div>
+		<div class="flex justify-center items-center">
+			<Image src={nivea} alt="Nivea" class="grid-image" />
+		</div>
+		<div class="flex justify-center items-center">
+			<Image src={scjohnson} alt="SC Johnson" class="grid-image" />
+		</div>
+		<div class="flex justify-center items-center">
+			<Image src={unilever} alt="Unilever" class="grid-image" />
+		</div>
+		<div class="flex justify-center items-center">
+			<Image
+				src={walmartConnect}
+				alt="Walmart Connect"
+				class="grid-image"
+			/>
+		</div>
+	</div>
+</div>

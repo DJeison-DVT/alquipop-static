@@ -1,0 +1,5 @@
+.grid-image {
+    width: 200px;
+    max-height: 150px;
+    filter: brightness(0)
+}

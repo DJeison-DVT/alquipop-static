@@ -1,28 +1,64 @@
 ---
 import "@/styles/globals.css";
 import Layout from "@/layouts/Layout.astro";
+import Grid from "@/components/Grid.astro";
 import { Image } from "astro:assets";
-import alquipop from "@/images/alquipop.svg";
+import alquipop from "@/images/alquipop-logo.svg";
 ---
 
 <Layout title="Alquipop">
-	<main
-		class="flex justify-center items-center h-screen w-screen text-white bg-gradient-radial from-stone-800 via-slate-900 to-stone-950"
-	>
-		<div
-			class="relative flex-col flex gap-3 justify-center items-center z-10"
-		>
-			<Image src={alquipop} alt="Alquipop" class="m-8" />
-			<div class="text-white text-4xl font-bold text-center">
-				Bajo Construcción
+	<main>
+		<section class="h-screen w-full flex flex-col">
+			<nav class="flex justify-between font-bold p-4 w-full">
+				<div class="flex items-center gap-2 font-bold text-xl h-fit">
+					<Image src={alquipop} alt="Alquipop logo" class="w-12" />
+					<p>Alquipop</p>
+				</div>
+				<div class="flex-col gap-1 hidden md:flex">
+					<a
+						href="#about-us"
+						class="transition-colors duration-300 ease-in-out hover:text-gray-600 scroll-smooth"
+						>Sobre Nosotros</a
+					>
+					<a
+						href="#talent"
+						class="transition-colors duration-300 ease-in-out hover:text-gray-600 scroll-smooth"
+						>Talento</a
+					>
+					<a
+						href="#portfolio"
+						class="transition-colors duration-300 ease-in-out hover:text-gray-600 scroll-smooth"
+						>Portafolio</a
+					>
+				</div>
+				<a
+					href="#contact"
+					class="bg-black text-white w-fit h-fit p-2 px-4 rounded-full"
+					>Contáctanos</a
+				>
+			</nav>
+			<div
+				class="flex-1 font-extrabold xl:text-[200px] md:text-[100px] text-[50px] flex items-center flex-col justify-center"
+			>
+				<div class="h-fit">
+					<span class="text-[#ff9300]">ALQUI</span>POP
+				</div>
+				<idv class="xl:text-[80px] md:text-[40px] text-xl">
+					- TRADE MARKETING AGENCY -
+				</idv>
 			</div>
-			<div class="max-w-lg break-words text-center">
-				El equipo de Alquipop está trabajando intensamente para dar vida
-				a una agencia creativa especializada en pop-up marketing. Pronto
-				lanzaremos soluciones innovadoras y experiencias únicas que
-				conectarán a las marcas con sus audiencias de maneras
-				impactantes y originales.
+			<div class="pb-10 w-full flex justify-center">
+				<div class="max-w-lg text-center text-gray-600">
+					Nos especializamos en generar impacto en el retail a través
+					de soluciones creativas dentro de puntos de venta.
+				</div>
 			</div>
-		</div>
+		</section>
+		<section id="about-us" class="h-screen"></section>
+		<section id="talent" class="h-screen"></section>
+		<section id="portfolio" class="h-screen">
+			<Grid />
+		</section>
+		<section id="contact" class="h-screen bg-black"></section>
 	</main>
 </Layout>
