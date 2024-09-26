@@ -2,6 +2,7 @@
 import "@/styles/globals.css";
 import Layout from "@/layouts/Layout.astro";
 import Grid from "@/components/Grid.astro";
+import Talent from "@/components/Talent.astro";
 import { Image } from "astro:assets";
 import alquipop from "@/images/alquipop-logo.svg";
 ---
@@ -11,7 +12,12 @@ import alquipop from "@/images/alquipop-logo.svg";
 		<section class="h-screen w-full flex flex-col">
 			<nav class="flex justify-between font-bold p-4 w-full">
 				<div class="flex items-center gap-2 font-bold text-xl h-fit">
-					<Image src={alquipop} alt="Alquipop logo" class="w-12" />
+					<Image
+						src={alquipop}
+						alt="Alquipop logo"
+						class="w-12"
+						loading="eager"
+					/>
 					<p>Alquipop</p>
 				</div>
 				<div class="flex-col gap-1 hidden md:flex">
@@ -38,7 +44,7 @@ import alquipop from "@/images/alquipop-logo.svg";
 				>
 			</nav>
 			<div
-				class="flex-1 font-extrabold xl:text-[200px] md:text-[100px] text-[50px] flex items-center flex-col justify-center"
+				class="flex-1 font-extrabold xl:text-[200px] md:text-[100px] text-[50px] text-lg flex items-center flex-col justify-center"
 			>
 				<div class="h-fit">
 					<span class="text-[#ff9300]">ALQUI</span>POP
@@ -48,14 +54,18 @@ import alquipop from "@/images/alquipop-logo.svg";
 				</idv>
 			</div>
 			<div class="pb-10 w-full flex justify-center">
-				<div class="max-w-lg text-center text-gray-600">
+				<div
+					class="max-w-lg text-center text-gray-600 text-xs md:text-md lg:text-xl"
+				>
 					Nos especializamos en generar impacto en el retail a través
 					de soluciones creativas dentro de puntos de venta.
 				</div>
 			</div>
 		</section>
 		<section id="about-us" class="h-screen"></section>
-		<section id="talent" class="h-screen"></section>
+		<section id="talent" class="h-screen">
+			<Talent />
+		</section>
 		<section id="portfolio" class="h-screen">
 			<Grid />
 		</section>

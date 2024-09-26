@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
 
 import "@/styles/partner-grid.css";
 
@@ -19,16 +20,27 @@ import walmartConnect from "@/images/corp-walmart-connect.png";
 <div class="wrapper">
 	<div class="grid grid-cols-4 gap-4 p-4">
 		<div class="flex justify-center items-center">
-			<Image src={alpura} alt="Alpura" class="grid-image" />
+			<Image
+				src={alpura}
+				alt="Alpura"
+				class="grid-image"
+				loading="eager"
+			/>
 		</div>
 		<div class="flex justify-center items-center">
-			<Image src={colgate} alt="Colgate" class="grid-image" />
+			<Image
+				src={colgate}
+				alt="Colgate"
+				class="grid-image"
+				loading="eager"
+			/>
 		</div>
 		<div class="flex justify-center items-center">
 			<Image
 				src={johnsonAndJohnson}
 				alt="Johnson & Johnson"
 				class="grid-image"
+				loading="eager"
 			/>
 		</div>
 		<div class="flex justify-center items-center">
@@ -36,31 +48,48 @@ import walmartConnect from "@/images/corp-walmart-connect.png";
 				src={kimberlyClark}
 				alt="Kimberly-Clark"
 				class="grid-image"
+				loading="eager"
 			/>
 		</div>
 		<div class="flex justify-center items-center">
-			<Image src={lala} alt="Lala" class="grid-image" />
+			<Image src={lala} alt="Lala" class="grid-image" loading="eager" />
 		</div>
 		<div class="flex justify-center items-center">
-			<Image src={mars} alt="Mars" class="grid-image" />
+			<Image src={mars} alt="Mars" class="grid-image" loading="eager" />
 		</div>
 		<div class="flex justify-center items-center">
-			<Image src={nestle} alt="Nestlé" class="grid-image" />
+			<Image
+				src={nestle}
+				alt="Nestlé"
+				class="grid-image"
+				loading="eager"
+			/>
 		</div>
 		<div class="flex justify-center items-center">
-			<Image src={nivea} alt="Nivea" class="grid-image" />
+			<Image src={nivea} alt="Nivea" class="grid-image" loading="eager" />
 		</div>
 		<div class="flex justify-center items-center">
-			<Image src={scjohnson} alt="SC Johnson" class="grid-image" />
+			<Image
+				src={scjohnson}
+				alt="SC Johnson"
+				class="grid-image"
+				loading="eager"
+			/>
 		</div>
 		<div class="flex justify-center items-center">
-			<Image src={unilever} alt="Unilever" class="grid-image" />
+			<Image
+				src={unilever}
+				alt="Unilever"
+				class="grid-image"
+				loading="eager"
+			/>
 		</div>
 		<div class="flex justify-center items-center">
 			<Image
 				src={walmartConnect}
 				alt="Walmart Connect"
 				class="grid-image"
+				loading="eager"
 			/>
 		</div>
 	</div>
