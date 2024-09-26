@@ -1,0 +1,30 @@
+.team-member {
+    @apply p-4;
+    @apply border-b-2;
+    @apply border-gray-200;
+    @apply cursor-pointer;
+    @apply text-gray-200;
+    @apply font-bold;
+    @apply transition-colors;
+    @apply duration-300;
+    @apply ease-in-out;
+}
+
+.team-member.selected {
+    @apply text-black
+}
+
+.talent-image {
+    @apply transition-transform duration-700 ease-in-out;
+    transform: rotate(0deg);
+}
+
+.team-member.selected .talent-image {
+    transform: rotate(10deg);
+}
+
+#selected-image {
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
