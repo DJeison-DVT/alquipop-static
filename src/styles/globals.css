@@ -17,3 +17,11 @@ body {
   padding: 0;
   background-color: #fff;
 }
+
+.execution-image {
+  @apply hidden md:block md:w-[300px] lg:w-[400px] pointer-events-none
+}
+
+.execution-image-container {
+  @apply absolute transform w-auto
+}

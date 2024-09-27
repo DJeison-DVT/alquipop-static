@@ -4,7 +4,13 @@ import Layout from "@/layouts/Layout.astro";
 import Grid from "@/components/Grid.astro";
 import Talent from "@/components/Talent.astro";
 import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
+
 import alquipop from "@/images/alquipop-logo.svg";
+import concept from "@/images/concept.png";
+import render from "@/images/render.png";
+import explosivo from "@/images/explosivo.png";
+import prototipo from "@/images/prototipo.png";
 ---
 
 <Layout title="Alquipop">
@@ -91,13 +97,100 @@ import alquipop from "@/images/alquipop-logo.svg";
 			</div>
 		</section>
 		<section
+			id="process"
+			class="h-screen bg-black flex flex-col items-center justify-center font-bold relative"
+		>
+			<div class="underline-offset-4 underline text-lg p-4 text-gray-200">
+				De la idea a la ejecución
+			</div>
+			<div
+				class="flex flex-col items-center justify-center gap-10 uppercase text-gray-600 md:text-5xl text-xl p-4 z-10"
+			>
+				<div
+					class="hover:text-gray-200 transition-colors duration-300 cursor-default"
+				>
+					Brief
+				</div>
+				<div
+					class="hover:text-gray-200 transition-colors duration-300 cursor-default"
+				>
+					Concepto
+				</div>
+				<div
+					class="hover:text-gray-200 transition-colors duration-300 cursor-default"
+				>
+					Render Inicial
+				</div>
+				<div
+					class="hover:text-gray-200 transition-colors duration-300 cursor-default"
+				>
+					Explosivo
+				</div>
+				<div
+					class="hover:text-gray-200 transition-colors duration-300 cursor-default"
+				>
+					Gráficos
+				</div>
+				<div
+					class="hover:text-gray-200 transition-colors duration-300 cursor-default"
+				>
+					Prototipo / Instructivo
+				</div>
+				<div
+					class="hover:text-gray-200 transition-colors duration-300 cursor-default"
+				>
+					Entrevista de satisfacción
+				</div>
+			</div>
+			<div
+				class="top-0 left-1/4 -translate-x-1/2 execution-image-container"
+			>
+				<Image
+					src={concept}
+					alt="concepto de diseño"
+					decoding="async"
+					loading="lazy"
+					class="execution-image"
+				/>
+			</div>
+			<div
+				class="right-0 -translate-y-1/2 execution-image-container top-1/3"
+			>
+				<Image
+					src={render}
+					alt="render de diseño"
+					decoding="async"
+					loading="lazy"
+					class="execution-image"
+				/>
+			</div>
+			<div class="right-[10%] execution-image-container bottom-0">
+				<Image
+					src={explosivo}
+					alt="explosivo"
+					decoding="async"
+					loading="lazy"
+					class="execution-image"
+				/>
+			</div>
+			<div class="left-0 execution-image-container bottom-[15%]">
+				<Image
+					src={prototipo}
+					alt="gráficos"
+					decoding="async"
+					loading="lazy"
+					class="execution-image"
+				/>
+			</div>
+		</section>
+		<section
 			id="talent"
 			class="h-screen min-h-screen flex flex-col justify-between"
 		>
 			<div
 				class="text-center max-w-7xl flex flex-col items-center mx-auto md:mt-10 mt-3"
 			>
-				<p class="underline-offset-4 underline font-bold">
+				<p class="underline-offset-4 underline font-bold text-lg">
 					Nuestro Equipo
 				</p>
 				<p></p>
@@ -107,6 +200,7 @@ import alquipop from "@/images/alquipop-logo.svg";
 		<section id="portfolio" class="h-screen">
 			<Grid />
 		</section>
+
 		<section id="contact" class="h-screen bg-black"></section>
 	</main>
 </Layout>
