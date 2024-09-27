@@ -1,0 +1,48 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<div class="text-gray-200 flex flex-col items-center justify-center h-full">
+	<SectionTitle title="Ponte en contacto" />
+	<div class="flex">
+		<div class="uppercase">Slogan</div>
+		<div>
+			<div>Ciudad de México</div>
+			<div>
+				Av. Cervantes Saavedra 233
+				<br />
+				Col. Granada, Miguel Hidalgo,
+				<br />
+				Ciudad de México 11520
+				<br />
+				+52 55 1253 7000
+			</div>
+			<a href="">Veelo en el mapa</a>
+		</div>
+		<div>
+			<div>Contactanos</div>
+			<form action="" method="post" class="flex flex-col">
+				<input type="text" name="name" id="name" placeholder="Nombre" />
+				<input
+					type="email"
+					name="email"
+					id="email"
+					placeholder="Correo"
+				/>
+				<input
+					type="text"
+					name="phone"
+					id="phone"
+					placeholder="Teléfono"
+				/>
+				<textarea
+					name="message"
+					id="message"
+					cols="30"
+					rows="10"
+					placeholder="Mensaje"></textarea>
+				<button type="submit">Enviar</button>
+			</form>
+		</div>
+	</div>
+</div>

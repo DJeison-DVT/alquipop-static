@@ -1,18 +1,45 @@
+---
+import { Image } from "astro:assets";
+import "@/styles/about-us.css";
+import displayColgate from "@/images/display-colgate.png";
+import displayKotex from "@/images/display-kotex.png";
+import displayKleenex from "@/images/display-kleenex.png";
+import displayLite from "@/images/display-lite.png";
+import displayPam from "@/images/display-pam.png";
+import displayPedigree from "@/images/display-pedigree.png";
+import SectionTitle from "./SectionTitle.astro";
+---
+
 <div
-	class="flex flex-col items-center justify-center h-full max-w-4xl mx-auto text-center"
+	class="flex flex-col md:flex-row items-center h-full text-center justify-around flex-1"
 >
-	<div class="flex flex-col items-center justify-center">
-		<p class="underline-offset-4 underline font-bold">Acerca de Nosotros</p>
+	<div class="about-image-container">
+		<Image src={displayColgate} alt="Display Colgate" class="about-image" />
+		<Image src={displayLite} alt="Display Lite" class="about-image" />
+		<Image src={displayPam} alt="Display Pam" class="about-image" />
+	</div>
+	<div
+		class="flex w-fit flex-col items-center justify-center md:flex-1 max-w-4xl"
+	>
+		<SectionTitle title="Acerca de Nosotros" />
 		<div
 			class="p-4 font-semibold text-xs sm:text-xl lg:text-3xl uppercase flex flex-col gap-2"
 		>
-			<p>Nuestra misión es transformar ideas en</p>
-			<p>realidades exitosas, priorizando resultados</p>
-			<p>tangibles que impulsen el crecimiento y éxito de las</p>
-			<p>marcas en el punto de venta. Se destacan por crear</p>
-			<p>experiencias memorables que fortalecen la relación</p>
-			<p>entre marcas y shoppers, generando resultados</p>
-			<p>medibles y duraderos en un mercado competitivo.</p>
+			Nuestra misión es transformar ideas en realidades exitosas,
+			priorizando resultados tangibles que impulsen el crecimiento y éxito
+			de las marcas en el punto de venta. Se destacan por crear
+			experiencias memorables que fortalecen la relación entre marcas y
+			shoppers, generando resultados medibles y duraderos en un mercado
+			competitivo.
 		</div>
+	</div>
+	<div class="about-image-container">
+		<Image src={displayKotex} alt="Display Kotex" class="about-image" />
+		<Image src={displayKleenex} alt="Display Kleenex" class="about-image" />
+		<Image
+			src={displayPedigree}
+			alt="Display Pedigree"
+			class="about-image"
+		/>
 	</div>
 </div>

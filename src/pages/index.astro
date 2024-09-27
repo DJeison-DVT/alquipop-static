@@ -6,6 +6,8 @@ import Grid from "@/components/Grid.astro";
 import Talent from "@/components/Talent.astro";
 import Process from "@/components/Process.astro";
 import AboutUs from "@/components/AboutUs.astro";
+import Contact from "@/components/Contact.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
 ---
 
 <Layout title="Alquipop">
@@ -29,17 +31,30 @@ import AboutUs from "@/components/AboutUs.astro";
 			<div
 				class="text-center max-w-7xl flex flex-col items-center mx-auto md:mt-10 mt-3"
 			>
-				<p class="underline-offset-4 underline font-bold text-lg">
-					Nuestro Equipo
-				</p>
+				<SectionTitle title="Nuestro Equipo" />
 				<p></p>
 			</div>
 			<Talent />
 		</section>
-		<section id="portfolio" class="h-screen">
-			<Grid />
+		<section id="portfolio" class="h-screen flex flex-col justify-around">
+			<div>
+				<div
+					class="text-center max-w-7xl flex flex-col items-center mx-auto md:mt-10 mt-3"
+				>
+					<SectionTitle title="Nuestros Proyectos" />
+				</div>
+			</div>
+			<div>
+				<div
+					class="text-center max-w-7xl flex flex-col items-center mx-auto md:mt-10 mt-3"
+				>
+					<SectionTitle title="Nuestros clientes" />
+				</div>
+				<Grid />
+			</div>
 		</section>
-
-		<section id="contact" class="h-screen bg-black"></section>
+		<section id="contact" class="h-screen bg-black">
+			<Contact />
+		</section>
 	</main>
 </Layout>
