@@ -1,88 +1,38 @@
 ---
 import { Image } from "astro:assets";
 
-import concept from "@/images/concept.png";
-import render from "@/images/render.png";
-import explosivo from "@/images/explosivo.png";
-import prototipo from "@/images/prototipo.png";
 import SectionTitle from "./SectionTitle.astro";
+import process from "@/images/graphic-process.png";
 ---
 
-<div class="text-gray-200">
-	<SectionTitle title="De la idea a la ejecución" />
-</div>
 <div
-	class="flex flex-col items-center justify-center gap-10 uppercase text-gray-600 md:text-5xl text-xl p-4 z-10"
+	class="p-2 md:p-8 font-normal flex flex-col md:gap-16 gap-6 justify-center"
 >
-	<div
-		class="hover:text-gray-200 transition-colors duration-300 cursor-default"
-	>
-		Brief
+	<div class="text-xl md:text-7xl">
+		De la idea a <span class="font-bold">la ejecución</span>
 	</div>
-	<div
-		class="hover:text-gray-200 transition-colors duration-300 cursor-default"
-	>
-		Concepto
+	<div class="mx-auto">
+		<div class="grid grid-cols-4 md:text-xl text-sm">
+			<div class="flex justify-center">1. Brief</div>
+			<div class="flex justify-center">2. Concepto</div>
+			<div class="flex justify-center">3. Producción</div>
+			<div class="flex justify-center">4. Ejecución & Feedback</div>
+		</div>
+		<Image
+			src={process}
+			alt="Proceso"
+			class="w-full max-h-[700px]"
+			loading="eager"
+		/>
 	</div>
-	<div
-		class="hover:text-gray-200 transition-colors duration-300 cursor-default"
-	>
-		Render Inicial
+	<div class="text-sm md:text-xl">
+		Desarrollamos una
+		<span class="font-bold">
+			propuesta creativa ejecutable sustentable,
+		</span>
+		considerando la mayor eficiencia en los procesos de: producción, distribución
+		y ejecución de las diferentes soluciones con nuestro objetivo fundamental
+		el cual es el de
+		<span class="font-bold"> ganar en el punto de venta. </span>
 	</div>
-	<div
-		class="hover:text-gray-200 transition-colors duration-300 cursor-default"
-	>
-		Explosivo
-	</div>
-	<div
-		class="hover:text-gray-200 transition-colors duration-300 cursor-default"
-	>
-		Gráficos
-	</div>
-	<div
-		class="hover:text-gray-200 transition-colors duration-300 cursor-default"
-	>
-		Prototipo / Instructivo
-	</div>
-	<div
-		class="hover:text-gray-200 transition-colors duration-300 cursor-default"
-	>
-		Entrevista de satisfacción
-	</div>
-</div>
-<div class="top-0 left-1/4 -translate-x-1/2 execution-image-container">
-	<Image
-		src={concept}
-		alt="concepto de diseño"
-		decoding="async"
-		loading="lazy"
-		class="execution-image"
-	/>
-</div>
-<div class="right-0 -translate-y-1/2 execution-image-container top-1/3">
-	<Image
-		src={render}
-		alt="render de diseño"
-		decoding="async"
-		loading="lazy"
-		class="execution-image"
-	/>
-</div>
-<div class="right-[10%] execution-image-container bottom-0">
-	<Image
-		src={explosivo}
-		alt="explosivo"
-		decoding="async"
-		loading="lazy"
-		class="execution-image"
-	/>
-</div>
-<div class="left-0 execution-image-container bottom-[15%]">
-	<Image
-		src={prototipo}
-		alt="gráficos"
-		decoding="async"
-		loading="lazy"
-		class="execution-image"
-	/>
 </div>
