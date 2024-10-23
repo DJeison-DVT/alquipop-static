@@ -1,17 +1,104 @@
 ---
-import "@/styles/about-us.css";
+import "@/styles/carousel.css";
+import Image from "astro/components/Image.astro";
 import SectionTitle from "./SectionTitle.astro";
+
+// Importing images
+import cabecera_alc from "../images/cabeceras/cabecera_alc.png";
+import cabecera_beefeater from "../images/cabeceras/cabecera_beefeater.png";
+import cabecera_benavides from "../images/cabeceras/cabecera_benavides.png";
+import cabecera_dog_show from "../images/cabeceras/cabecera_dog_show.png";
+import cabecera_glenlivet from "../images/cabeceras/cabecera_glenlivet.png";
+import cabecera_huggies from "../images/cabeceras/cabecera_huggies.png";
+import cabecera_lala from "../images/cabeceras/cabecera_lala.png";
+import cabecera_nestle from "../images/cabeceras/cabecera_nestle.png";
+import cabecera_proplan from "../images/cabeceras/cabecera_proplan.png";
+import cabecera_scj from "../images/cabeceras/cabecera_scj.png";
+import isla_huggies from "../images/cabeceras/isla_huggies.png";
 ---
 
-<div
-	class="flex flex-col items-center h-full text-center justify-center flex-1"
->
-	<SectionTitle title="Acerca de Nosotros" />
-	<div class="p-4 font-semibold text-xs sm:text-xl lg:text-3xl max-w-5xl">
-		Nuestra misión es transformar ideas en realidades exitosas, priorizando
-		resultados tangibles que impulsen el crecimiento y éxito de las marcas
-		en el punto de venta. Se destacan por crear experiencias memorables que
-		fortalecen la relación entre marcas y shoppers, generando resultados
-		medibles y duraderos en un mercado competitivo.
+<div class="flex flex-col h-full justify-evenly flex-1 overflow-x-hidden">
+	<div class="flex flex-col items-center text-center">
+		<SectionTitle title="Acerca de Nosotros" />
+		<div class="p-4 font-semibold text-xs sm:text-xl lg:text-3xl max-w-5xl">
+			Nuestra misión es transformar ideas en realidades exitosas,
+			priorizando resultados tangibles que impulsen el crecimiento y éxito
+			de las marcas en el punto de venta. Se destacan por crear
+			experiencias memorables que fortalecen la relación entre marcas y
+			shoppers, generando resultados medibles y duraderos en un mercado
+			competitivo.
+		</div>
+	</div>
+	<div
+		class="flex w-screen gap-3 container-carosel overflow-x-scroll"
+		id="infiniteScroll--left"
+	>
+		<article>
+			<Image src={cabecera_alc} alt="Cabecera ALC" />
+		</article>
+		<article>
+			<Image src={cabecera_beefeater} alt="Cabecera Beefeater" />
+		</article>
+		<article>
+			<Image src={cabecera_benavides} alt="Cabecera Benavides" />
+		</article>
+		<article>
+			<Image src={cabecera_dog_show} alt="Cabecera Dog Show" />
+		</article>
+		<article>
+			<Image src={cabecera_glenlivet} alt="Cabecera Glenlivet" />
+		</article>
+		<article>
+			<Image src={cabecera_huggies} alt="Cabecera Huggies" />
+		</article>
+		<article>
+			<Image src={cabecera_lala} alt="Cabecera Lala" />
+		</article>
+		<article>
+			<Image src={cabecera_nestle} alt="Cabecera Nestlé" />
+		</article>
+		<article>
+			<Image src={cabecera_proplan} alt="Cabecera Proplan" />
+		</article>
+		<article>
+			<Image src={cabecera_scj} alt="Cabecera SCJ" />
+		</article>
+		<article>
+			<Image src={isla_huggies} alt="Isla Huggies" />
+		</article>
 	</div>
 </div>
+
+<script>
+	const scrollContainers = document.querySelectorAll("#infiniteScroll--left");
+
+	scrollContainers.forEach((container) => {
+		// Clone all articles
+		const articles = container.querySelectorAll("article");
+		articles.forEach((article) => {
+			container.appendChild(article.cloneNode(true));
+		});
+
+		const containerWidth = container.scrollWidth / 2;
+		let isScrollingPaused = false;
+
+		function scrollContent() {
+			if (isScrollingPaused) return;
+
+			container.scrollLeft += 1;
+
+			if (container.scrollLeft >= containerWidth) {
+				container.scrollLeft = 0;
+			}
+		}
+
+		const scrolling = setInterval(scrollContent, 15);
+
+		container.addEventListener("mouseenter", () => {
+			isScrollingPaused = true;
+		});
+		container.addEventListener("mouseleave", () => {
+			isScrollingPaused = false;
+		});
+	});
+</script>

@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import alquipop from "@/images/alquipop-logo.svg";
 import linkedin from "@/images/icon-linkedin.png";
 import instagram from "@/images/icon-instagram.png";
+import rightArrow from "@/images/right-arrow.svg";
 ---
 
 <div class="flex flex-col items-center justify-center h-full">
@@ -18,7 +19,7 @@ import instagram from "@/images/icon-instagram.png";
 		<div
 			class="bg-white p-12 md:text-2xl flex flex-col justify-between gap-4"
 		>
-			<div class="flex flex-col md:gap-8 w-3/4">
+			<div class="flex flex-col md:gap-8 md:w-3/4 w-full">
 				<div class="font-bold">Dirección:</div>
 				<div class="underline">
 					C. Lago Zurich 245, Col-Piso 7, Amp Granada, Miguel Hidalgo,
@@ -48,28 +49,26 @@ import instagram from "@/images/icon-instagram.png";
 		</div>
 		<div class="p-12 md:text-2xl flex flex-col gap-8">
 			<div class="font-bold">Contáctanos:</div>
-			<form action="" method="post" class="flex-col hidden">
-				<input type="text" name="name" id="name" placeholder="Nombre" />
-				<input
-					type="email"
-					name="email"
-					id="email"
-					placeholder="Correo"
-				/>
-				<input
-					type="text"
-					name="phone"
-					id="phone"
-					placeholder="Teléfono"
-				/>
-				<textarea
-					name="message"
-					id="message"
-					cols="30"
-					rows="10"
-					placeholder="Mensaje"></textarea>
-				<button type="submit">Enviar</button>
-			</form>
+			<div>
+				Discutamos cómo podemos ayudarte a alcanzar tus objetivos de
+				negocio.
+			</div>
+			<a
+				href="mailto:info@alquipop.com?subject=Consulta%20sobre%20servicios%20de%20Alquipop&body=Hola%20equipo%20de%20Alquipop%2C%0D%0A%0D%0AEstoy%20interesado%2Fa%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios.%20%C2%BFPodr%C3%ADan%20por%20favor%20proporcionarme%20informaci%C3%B3n%20sobre%20precios%20y%20disponibilidad%3F%0D%0A%0D%0AMuchas%20gracias.%0D%0A%0D%0ASaludos%20cordiales%2C%0D%0A[Tu%20Nombre]"
+				class="border-b-2 w-fit py-1 border-black cursor-pointer flex gap-2"
+			>
+				<div class="flex justify-center items-center">
+					info@alquipop.com
+				</div>
+				<div class="flex justify-center items-center pt-2">
+					<Image
+						src={rightArrow}
+						alt="right arrow"
+						class="w-5 inline"
+						loading="eager"
+					/>
+				</div>
+			</a>
 		</div>
 	</div>
 </div>

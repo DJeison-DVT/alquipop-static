@@ -1,7 +1,0 @@
-.about-image {
-    @apply h-44 w-auto shadow-lg rounded-sm grayscale-0 md:grayscale hover:grayscale-0 transition duration-300
-}
-
-.about-image-container {
-    @apply flex md:flex-col gap-10
-}

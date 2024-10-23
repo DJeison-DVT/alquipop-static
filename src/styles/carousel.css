@@ -1,0 +1,26 @@
+.container-carosel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.container-carosel::-webkit-scrollbar {
+    display: none;
+}
+
+
+.container-carosel article {
+    min-width: 350px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.container-carosel article img {
+    height: 300px;
+    width: auto;
+    object-fit: contain;
+}
